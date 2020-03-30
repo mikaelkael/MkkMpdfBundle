@@ -1,0 +1,28 @@
+{
+  "name": "mikaelkael/mkk-mpdf-bundle",
+  "type": "symfony-bundle",
+  "description": "Bundle to integrate MPdf into Symfony",
+  "keywords": ["pdf", "tcpdf", "mpdf", "fpdi", "symfony", "bundle", "mkk"],
+  "homepage": "http://github.com/mikaelkael/MkkMpdfBundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mickael Perraud",
+      "homepage": "http://mikaelkael.fr"
+    }
+  ],
+  "require": {
+    "php": ">=7.2",
+    "symfony/framework-bundle": "^3.4|^4.3|^5.0",
+    "mpdf/mpdf": "8.0.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~5.4.3|~6.4",
+    "symfony/yaml": "^3.3|^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mkk\\MpdfBundle\\": ""
+    }
+  }
+}

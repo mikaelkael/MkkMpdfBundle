@@ -1,0 +1,11 @@
+services:
+    _defaults:
+        public: false
+
+    Mkk\MpdfBundle\Service\PdfService:
+        arguments:
+            - "@service_container"
+
+    mkk_mpdf.mpdf:
+        alias: Mkk\MpdfBundle\Service\PdfService
+        public: true

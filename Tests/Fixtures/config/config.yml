@@ -1,0 +1,5 @@
+framework:
+    secret: 'test'
+
+mkk_mpdf:
+    pdf_author: 'mikaelkael'

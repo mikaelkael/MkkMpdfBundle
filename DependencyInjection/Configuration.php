@@ -36,6 +36,7 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('margin_bottom')->defaultValue(16)->end()
                         ->scalarNode('margin_header')->defaultValue(9)->end()
                         ->scalarNode('margin_footer')->defaultValue(9)->end()
+                        ->scalarNode('tempDir')->defaultValue('%kernel.cache_dir%/tmp/')->end()
                     ->end()
                 ->end()
             ->end()

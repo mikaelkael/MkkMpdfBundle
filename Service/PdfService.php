@@ -55,6 +55,7 @@ class PdfService
     {
         $defaults = $this->container->getParameter('mkk_mpdf.mpdf');
         $config = array_merge($defaults, $config);
+        $this->createDir($config['tempDir']);
         $mpdf = new Mpdf($config);
         $mpdf->SetCreator($this->container->getParameter('mkk_mpdf.pdf_creator'));
         $mpdf->SetAuthor($this->container->getParameter('mkk_mpdf.pdf_author'));

@@ -6,9 +6,12 @@ use Mkk\MpdfBundle\Service\PdfService;
 use Mpdf\Mpdf;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class PdfServiceTest extends WebTestCase
+/**
+ * @internal
+ * @coversNothing
+ */
+final class PdfServiceTest extends WebTestCase
 {
-
     public function testService()
     {
         $kernel = static::createKernel();
@@ -16,7 +19,7 @@ class PdfServiceTest extends WebTestCase
         $container = $kernel->getContainer();
 
         $service = $container->get('mkk_mpdf.mpdf');
-        $this->assertTrue($service instanceof PdfService);
+        static::assertTrue($service instanceof PdfService);
     }
 
     public function testServiceCreation()
@@ -27,10 +30,10 @@ class PdfServiceTest extends WebTestCase
 
         $service = $container->get('mkk_mpdf.mpdf');
         $pdf = $service->create(['orientation' => 'L', 'format' => 'A5']);
-        $this->assertTrue($pdf instanceof Mpdf);
-        $this->assertEquals('L', $pdf->CurOrientation);
-        $this->assertEquals(419.53, $pdf->fwPt);
-        $this->assertEquals(595.28, $pdf->fhPt);
-        $this->assertEquals('mikaelkael', $pdf->author);
+        static::assertTrue($pdf instanceof Mpdf);
+        static::assertSame('L', $pdf->CurOrientation);
+        static::assertSame(419.53, $pdf->fwPt);
+        static::assertSame(595.28, $pdf->fhPt);
+        static::assertSame('mikaelkael', $pdf->author);
     }
 }

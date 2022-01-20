@@ -12,10 +12,10 @@ class TestKernel extends Kernel
 {
     public function registerBundles(): iterable
     {
-        return array(
+        return [
             new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-            new \Mkk\MpdfBundle\MkkMpdfBundle()
-        );
+            new \Mkk\MpdfBundle\MkkMpdfBundle(),
+        ];
     }
 
     public function registerContainerConfiguration(LoaderInterface $loader)

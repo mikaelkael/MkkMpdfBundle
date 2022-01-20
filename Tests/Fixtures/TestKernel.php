@@ -10,7 +10,7 @@ use Symfony\Component\HttpKernel\Kernel;
  */
 class TestKernel extends Kernel
 {
-    public function registerBundles()
+    public function registerBundles(): iterable
     {
         return array(
             new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
@@ -23,7 +23,7 @@ class TestKernel extends Kernel
         $loader->load(__DIR__.'/config/config.yml');
     }
 
-    public function getCacheDir()
+    public function getCacheDir(): string
     {
         return $this->getProjectDir().'/Tests/Fixtures/cache/'.$this->environment;
     }

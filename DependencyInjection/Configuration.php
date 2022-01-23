@@ -13,10 +13,8 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder('mkk_mpdf');
-        $rootNode = method_exists(TreeBuilder::class, 'getRootNode') ? $treeBuilder->getRootNode() : $treeBuilder->root('mkk_mpdf');
-        ;
 
-        $rootNode
+        $treeBuilder->getRootNode()
             ->children()
                 ->scalarNode('pdf_creator')->defaultValue('Mpdf')->end()
                 ->scalarNode('pdf_author')->defaultValue('Mpdf')->end()

@@ -18,8 +18,6 @@ class PdfService
 
     /**
      * Class constructor.
-     *
-     * @param string $className The class name to use. Default is Mpdf. Must be based on Mpdf
      */
     public function __construct(ContainerInterface $container)
     {
